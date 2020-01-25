@@ -20,7 +20,7 @@ def create
 
 	@article = Article.new(article_params)
 	if @article.save
-		flash[:notice] = 'The article was created'
+		flash[:success] = 'The article was created'
 		redirect_to article_path(@article)
 	else
 		render 'new'
@@ -33,7 +33,7 @@ end
 
 def update
 	if @article.update(article_params)
-		flash[:notice] = 'The article was updated'
+		flash[:success] = 'The article was updated'
 		redirect_to article_path(@article)
 	else
 		render 'edit'
@@ -42,7 +42,7 @@ end
 
 def destroy
 	@article.destroy
-	flash[:notice] = "Article was deleted"
+	flash[:danger] = "Article was deleted"
 	redirect_to articles_path
 end
 
