@@ -1,0 +1,35 @@
+<%= render 'shared/errors', object: @user%>
+    <%= form_for @user do |f|%>
+        <div class="form-group row">
+            <%= f.label :username, class: "col-sm-2 col-form-label", for: "inputTitle"%>
+                <br/>
+                <div class="col-sm-10">
+                    <%= f.text_field :username, placeholder: "Enter username", class: "form-control", id: "inputTitle"%>
+                </div>
+        </div>
+        <div class="form-group row">
+            <%= f.label :email, class: "col-sm-2 col-form-label", for: "inputDescription" %>
+                <br/>
+                <div class="col-sm-10">
+                    <%= f.email_field :email, placeholder: "Enter email", class: "form-control", id: "inputDescription" %>
+                </div>
+        </div>
+
+       <div class="form-group row">
+            <%= f.label :password, class: "col-sm-2 col-form-label", for: "inputDescription" %>
+                <br/>
+                <div class="col-sm-10">
+                    <%= f.password_field :password, placeholder: "Enter password", class: "form-control", id: "inputDescription" %>
+                </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <%= f.button(@user.new_record? ? "Create new user" : "Update your user", class: "btn btn-primary btn-lg", type: "submit") %>
+            </div>
+        </div>
+        <% end %>
+
+            <div class="col-xs-4 col-xs-offset-4">
+                [
+                <%= link_to "Cancel request and return to articles listing", articles_path %> ]
+            </div>

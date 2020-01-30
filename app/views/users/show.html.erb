@@ -1,0 +1,8 @@
+<h1 class="center">Articles of the <%= @user.username %></h1>
+<div align="center">
+<%= will_paginate @user_articles%>
+</div>
+<%= render 'articles/article', obj: @user_articles %>
+<div align="center">
+<%= will_paginate @user_articles%>
+</div>
