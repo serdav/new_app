@@ -2,7 +2,7 @@
 <div class="alert alert-danger" role="alert">
   <h4 class="alert-heading"><%= pluralize(object.errors.count, "error")%> prohibited this article from being saved:</h4>
   	<ul>
-  		<% object.errors.full_messages.each do |err_msg| %>
+  		<% @article.errors.full_messages.each do |err_msg| %>
   		<li><%=err_msg%></li>
 		<%end%>
 	</ul>
